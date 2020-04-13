@@ -23,6 +23,7 @@ if (message.content.search(prefix + "info") == 0){
             //Retourne si le serveur est on ou off en réponse de la commande !info
             tcpp.probe(serverip, serverport, function(err, data) {
                 console.log(data);
+                //Si le serveur est on, le bot renvoie un embed
                 if(data == true){
                     const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#32a852')
@@ -43,6 +44,7 @@ if (message.content.search(prefix + "info") == 0){
 
         message.channel.send(exampleEmbed);
                 }
+                //Si le serveur est down, le bot envoie un message
                 if(data == false){
                     message.channel.send("Server is down :frowning2:")
                 }
@@ -50,6 +52,7 @@ if (message.content.search(prefix + "info") == 0){
         });
 
     } 
+
 
 })
 
