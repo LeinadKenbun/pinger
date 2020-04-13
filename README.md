@@ -24,7 +24,7 @@ node main.js
 You can change prefix, Discord bot token, version and many other settings in the config.json
 
 ```javascript
-"prefix": "your-prefix",
+    "prefix": "your-prefix",
 	"token": "your-token",
     "version": "0.0.1",
     "server_ip": "your-ip",

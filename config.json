@@ -1,8 +1,9 @@
 {
-	"prefix": "your-prefix",
-	"token": "your-token",
-    "version": "your-version",
-    "server_ip": "your-ip",
-    "server_port": "your-port",
-    "name_server": "your-servername"
+    "prefix": "Your Prefix",
+    "token": "Your Token",
+    "version": "Your Version",
+    "server_ip": "Your Server IP",
+    "server_port": "Your Server Port",
+    "name_server": "Your Server Name",
+    "broadcast_channel": "Your Broadcast Channel ID"
 }

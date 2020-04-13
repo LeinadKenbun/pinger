@@ -56,6 +56,30 @@ if (message.content.search(prefix + "info") == 0){
 
 })
 
+client.setInterval(function(){
+    //----------------------------------Ajout du ping constant----------------------------------------
+    tcpp.probe(serverip, serverport, function(err, data) {
+        const state = {
+            val: data,
+            get someBool() { 
+              return this.val;
+            },
+            set someBool(data) {
+              if (data !== this.val){
+                  console.log("value changing to", data)
+                  if(data == false){
+                    client.channels.get(config.broadcast_channel).send("Server is up! :slight_smile:")
+                  }
+                  if(data == true){
+                    client.channels.get(config.broadcast_channel).send("Server crashed! :open_mouth:")
+                  }
+            };
+              this.val = data;
+            }
+          };          
+    })
+}, 1000)
+
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
   });
