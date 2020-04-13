@@ -19,10 +19,8 @@ client.on('message', message => {
 if (message.content.search(prefix + "info") == 0){
     //Retourne toute les infos par rapport au serveur
         tcpp.ping({ address: serverip, port: serverport }, function(err, available) {
-            console.log(available);
             //Retourne si le serveur est on ou off en réponse de la commande !info
             tcpp.probe(serverip, serverport, function(err, data) {
-                console.log(data);
                 //Si le serveur est on, le bot renvoie un embed
                 if(data == true){
                     const exampleEmbed = new Discord.MessageEmbed()
@@ -34,9 +32,9 @@ if (message.content.search(prefix + "info") == 0){
             .addFields(
                 { name: 'Server IP', value: serverip },
                 { name: 'Server Port', value: serverport },
-                { name: 'Ping Average', value: available.avg },
-                { name: 'Ping Max', value: available.max },
-                { name: 'Ping Min', value: available.min }
+                { name: 'Ping Average (ms)', value: available.avg },
+                { name: 'Ping Max (ms)', value: available.max },
+                { name: 'Ping Min (ms)', value: available.min }
             )
             .addFields({name: '\u200B', value: '\u200B'})
             .setTimestamp()
@@ -51,7 +49,14 @@ if (message.content.search(prefix + "info") == 0){
             });
         });
 
-    } 
+    }
+    
+    if (message.content.search(prefix + "testup") == 0){
+        message.channel.send("Server is up! :slight_smile:")
+    }
+    if(message.content.search(prefix + "testdown") == 0){
+        message.channel.send("Server crashed! :open_mouth:")
+    }
 
 
 })
