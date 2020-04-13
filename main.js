@@ -50,13 +50,6 @@ if (message.content.search(prefix + "info") == 0){
         });
 
     }
-    
-    if (message.content.search(prefix + "testup") == 0){
-        message.channel.send("Server is up! :slight_smile:")
-    }
-    if(message.content.search(prefix + "testdown") == 0){
-        message.channel.send("Server crashed! :open_mouth:")
-    }
 
 
 })
