@@ -8,7 +8,7 @@ Use the package Discord.js and tcp-ping to make this bot fonctionnal
 
 On Linux
 ```bash
-apt install npm
+apt install node
 npm install discord.js
 npm install tcp-ping
 ```
